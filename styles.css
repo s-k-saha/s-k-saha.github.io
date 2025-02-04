@@ -1,0 +1,154 @@
+
+body{
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  font-family: sans-serif;
+  box-sizing: border-box;
+  color: rgba(33,33,33,1);
+  font-size: .95em;
+}
+
+p{
+  padding: 0px;
+}
+
+a{
+  color: rgba(34,110,147,1);
+  cursor: pointer;
+}
+
+
+.grid-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  grid-template-rows: repeat(1, auto);  /* 2 rows */
+  gap: 3px; /* Space between items */
+  list-style-type: square; /* Default bullets */
+  padding: 0 35px;
+  
+}
+
+.grid-list li {
+  padding:  0px 5px;
+}
+
+#sidebar{
+  margin: 0px;
+  width: 15vw;
+  height: 100vh;
+  background-color: rgba(33,33,33,1);
+  position: fixed;
+
+}
+
+#homepageName{
+  display: flex;
+  align-items: center;
+  height: 35vh;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 270;
+  font-style: normal;
+  font-size: 2em;
+}
+
+#homepageName>p{
+  color: rgba(255,255,255,1);
+  margin: 0px;
+  padding: 0px 40px;
+}
+
+.MainContent{
+  width: 85vw;
+  margin: 0px;
+  margin-left: 15vw;
+  /*border: 1px solid red;*/ 
+}
+
+.Name{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3.5vw 0px;
+  font-size: 3em;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 270;
+  font-style: normal;
+  /*border: 1px solid red;*/ 
+}
+
+.Intro{
+  display: flex;
+  /*border: 1px solid red;*/ 
+  justify-content: center;
+}
+
+#introBox>p{
+  /*border: 1px solid red;*/ 
+  margin: 0px;
+  padding: 10px 0px;
+}
+
+#introBox{
+  /*border: 1px solid red;*/ 
+  width: 65%;
+}
+
+#pubtext{
+  width: auto;
+  margin-top: 7vw;
+}
+
+#publist{
+  width: 100%;
+}
+
+#publist>li{
+  width: 65%;
+  padding: 12px 0px;
+  margin: 0px auto;
+  
+}
+
+#publist>li::marker {
+    content: counter(list-item) ") ";
+  }
+
+#introBox>img{
+  width: 30%;
+  float: left;
+  padding: 10px;
+  
+}
+
+
+
+
+.content {
+            max-height: auto;
+            overflow: hidden;
+            font-size: 1.2em;
+            background-color: rgba(33,33,33,1);
+            transition: max-height 0.3s ease-out;
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 270;
+            font-style: normal;
+}
+
+.content a {
+            display: block;
+            padding: 15px 40px;
+            text-decoration: none;
+            color: white;
+            text-align: left;
+}
+
+.content a:hover {
+    color: rgba(34,110,147,1);
+}
+
+
