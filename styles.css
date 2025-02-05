@@ -8,6 +8,7 @@ body{
   box-sizing: border-box;
   color: rgba(33,33,33,1);
   font-size: .95em;
+  overflow-x: hidden;
 }
 
 p{
@@ -64,7 +65,8 @@ a{
   width: 85vw;
   margin: 0px;
   margin-left: 15vw;
-  /*border: 1px solid red;*/ 
+  overflow-x: hidden; /* Ensures no content spills over */
+  box-sizing: border-box; 
 }
 
 .Name{
@@ -80,16 +82,21 @@ a{
   /*border: 1px solid red;*/ 
 }
 
-.Intro{
+.Intro,.Intro-gallery,.gallery-container{
   display: flex;
   /*border: 1px solid red;*/ 
   justify-content: center;
 }
 
+.Intro-gallery{
+  margin-bottom: 150px;
+}
+
+
 #introBox>p{
   /*border: 1px solid red;*/ 
   margin: 0px;
-  padding: 10px 0px;
+  padding: 0px 0px;
 }
 
 #introBox{
@@ -113,6 +120,7 @@ a{
   
 }
 
+
 #publist>li::marker {
     content: counter(list-item) ") ";
   }
@@ -120,10 +128,24 @@ a{
 #introBox>img{
   width: 30%;
   float: left;
-  padding: 10px;
+  padding-right: 10px;
   
 }
 
+
+.gallery-cards{
+  width: 50%;
+  overflow: hidden;
+  text-align: center;
+}
+
+.gallery-cards>img{
+  max-height: 50vh;
+}
+
+.gallery-cards>p{
+  margin-bottom: 250px;
+}
 
 
 
