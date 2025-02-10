@@ -10,7 +10,9 @@ body{
   font-size: .95em;
   overflow-x: hidden;
 }
-
+button{
+  display: none;
+}
 p{
   padding: 0px;
 }
@@ -151,10 +153,8 @@ a{
 
 .content {
             max-height: auto;
-            overflow: hidden;
             font-size: 1.2em;
             background-color: rgba(33,33,33,1);
-            transition: max-height 0.3s ease-out;
             font-family: "Montserrat", sans-serif;
             font-optical-sizing: auto;
             font-weight: 270;
@@ -173,4 +173,114 @@ a{
     color: rgba(34,110,147,1);
 }
 
+
+
+
+
+@media screen and (max-width: 800px){
+
+#sidebar{
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+  width: 100vw;
+  height: 8vh;
+  transition: height 0.2s ease-in-out;
+  background-color: rgba(33,33,33,1);
+  position: fixed;
+  overflow: hidden; 
+  align-items: center;
+}
+
+#homepageName{
+  display: none;
+}
+
+button{
+  display: flex;
+  align-items: center;  /* Centers vertically */
+  justify-content: center; /* Centers horizontally */
+  width: 50px;
+  margin: 2vh 0px;
+  cursor: pointer;
+  background: none;
+  border: none; 
+}
+.menubtn{
+  height: 4vh;
+  width: 10vw;
+}
+
+.content{
+  text-align: center;
+}
+.content a {
+            padding: 25px 0px;
+            text-decoration: none;
+            color: white;
+            text-align: center;
+            margin: 5vh 0px;
+}
+	
+	
+.MainContent{
+  width: 100vw;
+  margin: 0px;
+}
+  
+.Name{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8vh;
+  padding: 3.5vw 0px;
+  font-size: 2.5em;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 270;
+  font-style: normal;
+}
+
+.Intro,.Intro-gallery,.gallery-container{
+  flex-direction: column;
+  /*border: 1px solid red;*/ 
+  justify-content: center;
+  align-items: center;
+}
+#introBox{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 65%;
+}
+#introBox>img{
+  width: 75%;
+  float: none;
+  padding-right: 0px;
+  padding-bottom: 10px;
+  
+}
+
+.grid-list {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* 2 columns */
+  grid-template-rows: repeat(1, auto);  /* 2 rows */
+  gap: 10px; /* Space between items */
+  list-style-type: square; /* Default bullets */
+  padding: 5px 0px;
+  
+}
+
+.grid-list li {
+  padding:  0px 0px;
+}
+#introBox>p{
+  word-break: break-all;  /* Ensures words break instead of overflowing */
+  overflow-wrap: break-word; /* Breaks long words to fit */
+  white-space: normal;  /* Allows text wrapping */
+  hyphens: auto;   
+}
+
+}
 

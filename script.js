@@ -20,3 +20,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+function toggleMenu() {
+            var menu = document.getElementById("sidebar");
+            console.log(menu.style.height);
+            // Toggle menu visibility
+            if (menu.style.height === "8vh" || menu.style.height === "" ) {
+                menu.style.height = "100vh";
+            } else {
+                 menu.style.height = "8vh";
+            }
+        }
+
