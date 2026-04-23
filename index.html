@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soumya Kanti Saha — Non-Equilibrium Statistical Physics</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="nav-name">Soumya Kanti Saha</div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#cv">CV</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <header id="hero">
+    <div class="hero-inner">
+      <p class="hero-label">Researcher · Statistical Physics</p>
+      <h1 class="hero-name">Soumya Kanti Saha</h1>
+      <p class="hero-affil">JGU Mainz &mdash; Institut für Physik</p>
+      <div class="hero-line"></div>
+      <p class="hero-tagline">
+        Probing the irreversible: entropy production, driven systems,<br>
+        and the arrow of time at the mesoscale.
+      </p>
+    </div>
+    <div class="hero-glyph" aria-hidden="true">∂<sub>t</sub>ρ</div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-inner">
+      <h2 class="section-title">About</h2>
+      <div class="about-grid">
+        <div class="about-photo-wrap">
+          <div class="about-photo-placeholder">
+            <span>Photo</span>
+          </div>
+        </div>
+        <div class="about-text">
+          <p>
+            I am a researcher in non-equilibrium statistical physics at [Institution].
+            My work sits at the intersection of stochastic thermodynamics, active matter,
+            and the mathematical foundations of irreversibility.
+          </p>
+          <p>
+            Before joining [Institution], I held positions at [Previous Institution] and
+            completed my PhD at [University] under the supervision of [Advisor].
+          </p>
+          <p>
+            Outside the lab I am interested in the philosophy of time, dynamical systems,
+            and the history of thermodynamics.
+          </p>
+          <div class="about-links">
+            <a href="#" class="pill">Google Scholar</a>
+            <a href="#" class="pill">arXiv</a>
+            <a href="#" class="pill">GitHub</a>
+            <a href="#" class="pill">ORCID</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="research">
+    <div class="section-inner">
+      <h2 class="section-title">Research</h2>
+      <div class="research-grid">
+        <article class="research-card">
+          <span class="card-num">01</span>
+          <h3>Stochastic Thermodynamics</h3>
+          <p>
+            Fluctuation theorems, entropy production rates, and the thermodynamic
+            uncertainty relations in driven colloidal and chemical systems.
+          </p>
+        </article>
+        <article class="research-card">
+          <span class="card-num">02</span>
+          <h3>Active Matter</h3>
+          <p>
+            Self-propelled particles, motility-induced phase separation, and
+            collective dynamics far from thermal equilibrium.
+          </p>
+        </article>
+        <article class="research-card">
+          <span class="card-num">03</span>
+          <h3>Large Deviation Theory</h3>
+          <p>
+            Rare events, current fluctuations, and the geometry of the space
+            of non-equilibrium steady states.
+          </p>
+        </article>
+        <article class="research-card">
+          <span class="card-num">04</span>
+          <h3>Biological Networks</h3>
+          <p>
+            Energetic costs of precision in biochemical oscillators and
+            sensing networks, from the Jarzynski equality to living cells.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications">
+    <div class="section-inner">
+      <h2 class="section-title">Publications</h2>
+
+      <div class="pub-filter" id="pubFilter">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="journal">Journal</button>
+        <button class="filter-btn" data-filter="preprint">Preprint</button>
+      </div>
+
+      <ol class="pub-list" id="pubList">
+
+        <li class="pub-item" data-type="journal">
+          <span class="pub-year">2024</span>
+          <div class="pub-body">
+            <p class="pub-title">Entropy production and the geometry of non-equilibrium steady states</p>
+            <p class="pub-authors">Your Name, Co-Author A, Co-Author B</p>
+            <p class="pub-venue"><em>Physical Review Letters</em> 132, 087101</p>
+            <div class="pub-links">
+              <a href="#">PDF</a><a href="#">arXiv</a><a href="#">DOI</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="pub-item" data-type="journal">
+          <span class="pub-year">2023</span>
+          <div class="pub-body">
+            <p class="pub-title">Thermodynamic uncertainty relations beyond steady state</p>
+            <p class="pub-authors">Your Name, Co-Author C</p>
+            <p class="pub-venue"><em>Journal of Statistical Mechanics</em> 2023, 073204</p>
+            <div class="pub-links">
+              <a href="#">PDF</a><a href="#">arXiv</a><a href="#">DOI</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="pub-item" data-type="preprint">
+          <span class="pub-year">2025</span>
+          <div class="pub-body">
+            <p class="pub-title">Active fluctuations and broken detailed balance at mesoscale</p>
+            <p class="pub-authors">Your Name, Co-Author D, Co-Author E</p>
+            <p class="pub-venue">arXiv:2501.XXXXX <span class="preprint-badge">Preprint</span></p>
+            <div class="pub-links">
+              <a href="#">arXiv</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="pub-item" data-type="journal">
+          <span class="pub-year">2022</span>
+          <div class="pub-body">
+            <p class="pub-title">Large deviations of current in driven diffusive systems</p>
+            <p class="pub-authors">Co-Author F, Your Name</p>
+            <p class="pub-venue"><em>Physical Review E</em> 106, 024112</p>
+            <div class="pub-links">
+              <a href="#">PDF</a><a href="#">arXiv</a><a href="#">DOI</a>
+            </div>
+          </div>
+        </li>
+
+      </ol>
+    </div>
+  </section>
+
+  <!-- CV -->
+  <section id="cv">
+    <div class="section-inner">
+      <h2 class="section-title">CV</h2>
+      <div class="cv-grid">
+
+        <div class="cv-col">
+          <h3 class="cv-heading">Positions</h3>
+          <div class="cv-entry">
+            <span class="cv-date">2022 –</span>
+            <div>
+              <strong>Assistant Professor</strong><br>
+              [Institution], [Department]
+            </div>
+          </div>
+          <div class="cv-entry">
+            <span class="cv-date">2019 – 22</span>
+            <div>
+              <strong>Postdoctoral Researcher</strong><br>
+              [Previous Institution]
+            </div>
+          </div>
+
+          <h3 class="cv-heading" style="margin-top:2.5rem">Education</h3>
+          <div class="cv-entry">
+            <span class="cv-date">2019</span>
+            <div>
+              <strong>PhD, Physics</strong><br>
+              [University]
+            </div>
+          </div>
+          <div class="cv-entry">
+            <span class="cv-date">2015</span>
+            <div>
+              <strong>MSc, Theoretical Physics</strong><br>
+              [University]
+            </div>
+          </div>
+        </div>
+
+        <div class="cv-col">
+          <h3 class="cv-heading">Awards &amp; Grants</h3>
+          <div class="cv-entry">
+            <span class="cv-date">2023</span>
+            <div>[Grant / Award Name]</div>
+          </div>
+          <div class="cv-entry">
+            <span class="cv-date">2021</span>
+            <div>[Fellowship Name]</div>
+          </div>
+
+          <h3 class="cv-heading" style="margin-top:2.5rem">Service</h3>
+          <div class="cv-entry">
+            <span class="cv-date"></span>
+            <div>Reviewer: PRL, PRE, JSTAT, NJP</div>
+          </div>
+          <div class="cv-entry">
+            <span class="cv-date"></span>
+            <div>Session chair, [Conference 20XX]</div>
+          </div>
+        </div>
+
+      </div>
+      <a href="#" class="cv-download">Download full CV (PDF) ↓</a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-inner contact-inner">
+      <h2 class="section-title">Contact</h2>
+      <p class="contact-intro">
+        I welcome inquiries from prospective PhD students and postdocs,
+        as well as collaborations and speaking invitations.
+      </p>
+      <div class="contact-details">
+        <div class="contact-item">
+          <span class="contact-label">Email</span>
+          <a href="mailto:you@institution.edu">you@institution.edu</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Office</span>
+          <span>Room XXX, [Building], [Institution]</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Address</span>
+          <span>[Street], [City], [Country]</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Soumya Kanti Saha &mdash; Non-Equilibrium Statistical Physics</p>
+    <p class="footer-small">Last updated April 2026</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
