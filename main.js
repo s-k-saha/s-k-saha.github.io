@@ -3,6 +3,21 @@
 (function () {
   'use strict';
 
+  /* ── Dark mode (persisted) ─────────────────────────────── */
+  const root        = document.documentElement;
+  const themeToggle = document.getElementById('themeToggle');
+
+  // Apply saved preference immediately (before paint)
+  const saved = localStorage.getItem('theme');
+  if (saved) root.setAttribute('data-theme', saved);
+
+  themeToggle.addEventListener('click', () => {
+    const isDark = root.getAttribute('data-theme') === 'dark';
+    const next   = isDark ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  });
+
   /* ── NAV scroll shadow ─────────────────────────────────── */
   const nav = document.getElementById('nav');
   const onScroll = () => {

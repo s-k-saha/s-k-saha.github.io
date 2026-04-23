@@ -19,6 +19,75 @@
   --ease:       cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
+/* ─── DARK MODE TOKENS ────────────────────────────────────── */
+[data-theme="dark"] {
+  --bg:        #16140f;
+  --bg-alt:    #1e1b15;
+  --ink:        #e8e4dc;
+  --ink-mid:    #a09890;
+  --ink-light:  #6a6258;
+  --rule:       #2e2a22;
+}
+[data-theme="dark"] #nav.scrolled {
+  background: rgba(22,20,15,0.96);
+}
+[data-theme="dark"] .nav-links {
+  background: var(--bg);
+}
+
+/* ─── NAV LEFT GROUP ──────────────────────────────────────── */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* ─── THEME TOGGLE (pill slider) ─────────────────────────── */
+.theme-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.toggle-track {
+  position: relative;
+  display: block;
+  width: 36px;
+  height: 20px;
+  border-radius: 10px;
+  border: 1px solid var(--rule);
+  background: transparent;
+  transition: border-color 0.3s, background 0.3s;
+}
+.theme-toggle:hover .toggle-track { border-color: var(--ink-mid); }
+.toggle-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--ink-light);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s;
+}
+[data-theme="dark"] .toggle-track {
+  border-color: var(--ink-mid);
+  background: var(--rule);
+}
+[data-theme="dark"] .toggle-thumb {
+  transform: translateX(16px);
+  background: var(--ink);
+}
+
+/* smooth colour transitions site-wide */
+body, #nav, section, footer, .research-card, .pill, .filter-btn,
+.cv-download, .about-photo-placeholder, .preprint-badge {
+  transition: background 0.3s, color 0.3s, border-color 0.3s;
+}
+
 /* ─── RESET ──────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; font-size: 18px; }
@@ -91,8 +160,8 @@ a { color: inherit; text-decoration: none; }
 
 /* ─── HERO ────────────────────────────────────────────────── */
 #hero {
-  min-height: 45svh;
-  padding: calc(var(--nav-h) + 4rem) var(--gutter) 4rem;
+  min-height: 55svh;
+  padding: calc(var(--nav-h) + 3vh) var(--gutter) 4vh;
   display: flex;
   align-items: center;
   position: relative;
