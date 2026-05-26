@@ -1,0 +1,48 @@
+[
+  {
+    "year": 2025,
+    "type": "preprint",
+    "title": "Active fluctuations and broken detailed balance at mesoscale",
+    "authors": "Your Name, Co-Author D, Co-Author E",
+    "venue": "arXiv:2501.XXXXX",
+    "links": {
+      "arXiv": "#"
+    }
+  },
+  {
+    "year": 2024,
+    "type": "journal",
+    "title": "Entropy production and the geometry of non-equilibrium steady states",
+    "authors": "Your Name, Co-Author A, Co-Author B",
+    "venue": "Physical Review Letters 132, 087101",
+    "links": {
+      "PDF": "#",
+      "arXiv": "#",
+      "DOI": "#"
+    }
+  },
+  {
+    "year": 2023,
+    "type": "journal",
+    "title": "Thermodynamic uncertainty relations beyond steady state",
+    "authors": "Your Name, Co-Author C",
+    "venue": "Journal of Statistical Mechanics 2023, 073204",
+    "links": {
+      "PDF": "#",
+      "arXiv": "#",
+      "DOI": "#"
+    }
+  },
+  {
+    "year": 2022,
+    "type": "journal",
+    "title": "Large deviations of current in driven diffusive systems",
+    "authors": "Co-Author F, Your Name",
+    "venue": "Physical Review E 106, 024112",
+    "links": {
+      "PDF": "#",
+      "arXiv": "#",
+      "DOI": "#"
+    }
+  }
+]

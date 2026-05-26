@@ -1,3 +1,139 @@
+async function loadJSON(path) {
+  const res = await fetch(path);
+  if (!res.ok) throw new Error(`Failed to load ${path}: ${res.status}`);
+  return res.json();
+}
+ 
+/* ── 2. RENDER: RESEARCH ──────────────────────────────────────────────────── */
+ 
+function renderResearch(items) {
+  const grid = document.querySelector('.research-grid');
+  if (!grid) return;
+ 
+  grid.innerHTML = items.map(item => `
+    <article class="research-card">
+      <span class="card-num">${escHtml(item.number)}</span>
+      <h3>${escHtml(item.title)}</h3>
+      <p>${escHtml(item.description)}</p>
+    </article>
+  `).join('');
+}
+ 
+/* ── 3. RENDER: PUBLICATIONS ──────────────────────────────────────────────── */
+ 
+function renderPublications(items) {
+  const list = document.getElementById('pubList');
+  if (!list) return;
+ 
+  // Sort newest first (descending year)
+  const sorted = [...items].sort((a, b) => b.year - a.year);
+ 
+  list.innerHTML = sorted.map(pub => {
+    const isPreprint = pub.type === 'preprint';
+ 
+    // Venue: italicise journal name for journal articles
+    const venueHtml = isPreprint
+      ? `${escHtml(pub.venue)} <span class="preprint-badge">Preprint</span>`
+      : `<em>${escHtml(pub.venue)}</em>`;
+ 
+    // Links
+    const linksHtml = Object.entries(pub.links)
+      .map(([label, url]) => `<a href="${escAttr(url)}">${escHtml(label)}</a>`)
+      .join('');
+ 
+    return `
+      <li class="pub-item" data-type="${escAttr(pub.type)}">
+        <span class="pub-year">${escHtml(String(pub.year))}</span>
+        <div class="pub-body">
+          <p class="pub-title">${escHtml(pub.title)}</p>
+          <p class="pub-authors">${escHtml(pub.authors)}</p>
+          <p class="pub-venue">${venueHtml}</p>
+          <div class="pub-links">${linksHtml}</div>
+        </div>
+      </li>
+    `;
+  }).join('');
+ 
+  // Re-apply any active filter after re-render
+  applyFilter(document.querySelector('.filter-btn.active')?.dataset.filter ?? 'all');
+}
+ 
+/* ── 4. PUBLICATION FILTER ────────────────────────────────────────────────── */
+ 
+function applyFilter(filter) {
+  document.querySelectorAll('.pub-item').forEach(item => {
+    item.style.display =
+      filter === 'all' || item.dataset.type === filter ? '' : 'none';
+  });
+}
+ 
+function initFilter() {
+  document.getElementById('pubFilter')?.addEventListener('click', e => {
+    const btn = e.target.closest('.filter-btn');
+    if (!btn) return;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    applyFilter(btn.dataset.filter);
+  });
+}
+ 
+/* ── 5. NAV TOGGLE ────────────────────────────────────────────────────────── */
+ 
+function initNav() {
+  const toggle = document.getElementById('navToggle');
+  const links  = document.getElementById('navLinks');
+  toggle?.addEventListener('click', () => links?.classList.toggle('open'));
+ 
+  // Close menu when a link is clicked (mobile)
+  links?.querySelectorAll('a').forEach(a =>
+    a.addEventListener('click', () => links.classList.remove('open'))
+  );
+}
+ 
+/* ── 6. DARK / LIGHT THEME TOGGLE ─────────────────────────────────────────── */
+ 
+function initTheme() {
+  const btn = document.getElementById('themeToggle');
+  const stored = localStorage.getItem('theme');
+  if (stored === 'dark') document.documentElement.classList.add('dark');
+ 
+  btn?.addEventListener('click', () => {
+    const isDark = document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+}
+ 
+/* ── 7. HELPERS ───────────────────────────────────────────────────────────── */
+ 
+function escHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+function escAttr(str) { return escHtml(str); }
+ 
+/* ── 8. BOOT ──────────────────────────────────────────────────────────────── */
+ 
+document.addEventListener('DOMContentLoaded', async () => {
+  initNav();
+  initTheme();
+  initFilter();
+ 
+  try {
+    const [research, publications] = await Promise.all([
+      loadJSON('research.json'),
+      loadJSON('publications.json'),
+    ]);
+    renderResearch(research);
+    renderPublications(publications);
+  } catch (err) {
+    console.error('Could not load data files:', err);
+  }
+});
+
+
 /* main.js — portfolio interactions */
 
 (function () {

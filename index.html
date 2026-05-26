@@ -85,40 +85,7 @@
   <section id="research">
     <div class="section-inner">
       <h2 class="section-title">Research</h2>
-      <div class="research-grid">
-        <article class="research-card">
-          <span class="card-num">01</span>
-          <h3>Stochastic Thermodynamics</h3>
-          <p>
-            Fluctuation theorems, entropy production rates, and the thermodynamic
-            uncertainty relations in driven colloidal and chemical systems.
-          </p>
-        </article>
-        <article class="research-card">
-          <span class="card-num">02</span>
-          <h3>Active Matter</h3>
-          <p>
-            Self-propelled particles, motility-induced phase separation, and
-            collective dynamics far from thermal equilibrium.
-          </p>
-        </article>
-        <article class="research-card">
-          <span class="card-num">03</span>
-          <h3>Large Deviation Theory</h3>
-          <p>
-            Rare events, current fluctuations, and the geometry of the space
-            of non-equilibrium steady states.
-          </p>
-        </article>
-        <article class="research-card">
-          <span class="card-num">04</span>
-          <h3>Biological Networks</h3>
-          <p>
-            Energetic costs of precision in biochemical oscillators and
-            sensing networks, from the Jarzynski equality to living cells.
-          </p>
-        </article>
-      </div>
+      <div class="research-grid"></div> <!-- Reads the list off research.json -->
     </div>
   </section>
 
@@ -133,57 +100,7 @@
         <button class="filter-btn" data-filter="preprint">Preprint</button>
       </div>
 
-      <ol class="pub-list" id="pubList">
-
-        <li class="pub-item" data-type="journal">
-          <span class="pub-year">2024</span>
-          <div class="pub-body">
-            <p class="pub-title">Entropy production and the geometry of non-equilibrium steady states</p>
-            <p class="pub-authors">Your Name, Co-Author A, Co-Author B</p>
-            <p class="pub-venue"><em>Physical Review Letters</em> 132, 087101</p>
-            <div class="pub-links">
-              <a href="#">PDF</a><a href="#">arXiv</a><a href="#">DOI</a>
-            </div>
-          </div>
-        </li>
-
-        <li class="pub-item" data-type="journal">
-          <span class="pub-year">2023</span>
-          <div class="pub-body">
-            <p class="pub-title">Thermodynamic uncertainty relations beyond steady state</p>
-            <p class="pub-authors">Your Name, Co-Author C</p>
-            <p class="pub-venue"><em>Journal of Statistical Mechanics</em> 2023, 073204</p>
-            <div class="pub-links">
-              <a href="#">PDF</a><a href="#">arXiv</a><a href="#">DOI</a>
-            </div>
-          </div>
-        </li>
-
-        <li class="pub-item" data-type="preprint">
-          <span class="pub-year">2025</span>
-          <div class="pub-body">
-            <p class="pub-title">Active fluctuations and broken detailed balance at mesoscale</p>
-            <p class="pub-authors">Your Name, Co-Author D, Co-Author E</p>
-            <p class="pub-venue">arXiv:2501.XXXXX <span class="preprint-badge">Preprint</span></p>
-            <div class="pub-links">
-              <a href="#">arXiv</a>
-            </div>
-          </div>
-        </li>
-
-        <li class="pub-item" data-type="journal">
-          <span class="pub-year">2022</span>
-          <div class="pub-body">
-            <p class="pub-title">Large deviations of current in driven diffusive systems</p>
-            <p class="pub-authors">Co-Author F, Your Name</p>
-            <p class="pub-venue"><em>Physical Review E</em> 106, 024112</p>
-            <div class="pub-links">
-              <a href="#">PDF</a><a href="#">arXiv</a><a href="#">DOI</a>
-            </div>
-          </div>
-        </li>
-
-      </ol>
+      <ol class="pub-list" id="pubList"></ol> <!-- Reads the list off publications.json -->
     </div>
   </section>
 
