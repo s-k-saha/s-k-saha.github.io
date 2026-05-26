@@ -76,14 +76,14 @@ function initFilter() {
     applyFilter(btn.dataset.filter);
   });
 }
- 
+
+
 /* ── 5. NAV TOGGLE ────────────────────────────────────────────────────────── */
  
 function initNav() {
   const toggle = document.getElementById('navToggle');
   const links  = document.getElementById('navLinks');
-  toggle?.addEventListener('click', () => links?.classList.toggle('open'));
- 
+  
   // Close menu when a link is clicked (mobile)
   links?.querySelectorAll('a').forEach(a =>
     a.addEventListener('click', () => links.classList.remove('open'))
@@ -102,6 +102,7 @@ function initTheme() {
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
   });
 }
+
  
 /* ── 7. HELPERS ───────────────────────────────────────────────────────────── */
  
