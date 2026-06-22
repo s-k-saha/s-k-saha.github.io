@@ -1,0 +1,26 @@
+[
+  {
+    "number": "01",
+    "title": "Stochastic Thermodynamics",
+    "description": "Fluctuation theorems, entropy production rates, and the thermodynamic uncertainty relations in driven colloidal and chemical systems.",
+    "links": "https://github.com/s-k-saha/cDFT_electrolytes"
+  },
+  {
+    "number": "02",
+    "title": "Active Matter",
+    "description": "Self-propelled particles, motility-induced phase separation, and collective dynamics far from thermal equilibrium.",
+    "links": "#"
+  },
+  {
+    "number": "03",
+    "title": "Large Deviation Theory",
+    "description": "Rare events, current fluctuations, and the geometry of the space of non-equilibrium steady states.",
+    "links": "#"
+  },
+  {
+    "number": "04",
+    "title": "Biological Networks",
+    "description": "Energetic costs of precision in biochemical oscillators and sensing networks, from the Jarzynski equality to living cells.",
+    "links": "#"
+  }
+]

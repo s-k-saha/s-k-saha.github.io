@@ -18,6 +18,23 @@ function renderResearch(items) {
     </article>
   `).join('');
 }
+
+/* ── 2. RENDER: SOFTWARES ──────────────────────────────────────────────────── */
+ 
+function renderSoftwares(items) {
+  const grid = document.querySelector('.softwares-grid');
+  if (!grid) return;
+ 
+  grid.innerHTML = items.map(item => `
+    <a href=${escHtml(item.links)} target="_blank" class="article-link">
+    <article class="softwares-card">
+      <span class="card-num">${escHtml(item.number)}</span>
+      <h3>${escHtml(item.title)}</h3>
+      <p>${escHtml(item.description)}</p>
+    </article>
+    </a>
+  `).join('');
+}
  
 /* ── 3. RENDER: PUBLICATIONS ──────────────────────────────────────────────── */
  
@@ -123,12 +140,14 @@ document.addEventListener('DOMContentLoaded', async () => {
   initFilter();
  
   try {
-    const [research, publications] = await Promise.all([
+    const [research, publications, softwares] = await Promise.all([
       loadJSON('research.json'),
       loadJSON('publications.json'),
+      loadJSON('softwares.json'),
     ]);
     renderResearch(research);
     renderPublications(publications);
+    renderSoftwares(softwares);
   } catch (err) {
     console.error('Could not load data files:', err);
   }
